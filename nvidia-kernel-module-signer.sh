@@ -1,8 +1,7 @@
 #!/bin/bash
 #
-# NVIDIA Secure Boot Driver Signing Automation Script (IMPROVED)
-# For Ubuntu with RTX 3080 (and other NVIDIA GPUs)
-# This version detects driver info WITHOUT requiring nvidia-smi to work
+# NVIDIA Secure Boot Driver Signing Automation Script
+# This version detects driver info from filesystem
 #
 # Usage: sudo bash nvidia-secure-boot-sign.sh
 #
@@ -41,7 +40,7 @@ print_error() {
     echo -e "${RED}[ERROR]${NC} $1"
 }
 
-# Function to detect NVIDIA driver version from filesystem (NOT nvidia-smi)
+# Function to detect NVIDIA driver version from filesystem
 detect_nvidia_driver_version() {
     local version=""
     
