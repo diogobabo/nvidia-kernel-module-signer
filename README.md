@@ -9,6 +9,7 @@ A simple, automated Bash script to sign NVIDIA kernel modules for Secure Boot on
 - **DKMS Integration** - Automatically configures DKMS to sign modules on updates
 - **MOK Management** - Generates and enrolls Machine Owner Keys for Secure Boot
 - **Color-Coded Output** - Easy-to-read status messages
+- **Resigning Script** - Creates a script for easy re-signing after driver updates
 
 ## Prerequisites
 
@@ -63,12 +64,17 @@ After running the script, you'll need to reboot and enroll the MOK key:
 4. Enter the password you set during the script execution
 5. Reboot again
 
+### If you update the NVIDIA drivers
+
+If you update your NVIDIA drivers in the future, simply use the resigning script that will be created in `/usr/local/bin/nvidia-secure-boot-resign` to re-sign the modules without needing to go through the entire process again.
+
 ## What to Expect
 
 After successfully running the script and enrolling the MOK:
 
 - Your NVIDIA drivers will work with Secure Boot enabled
 - Your system remains secure with Secure Boot
+- You can easily re-sign your modules after driver updates
 
 ## Disclaimer
 
